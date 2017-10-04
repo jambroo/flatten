@@ -24,4 +24,9 @@ describe('flatten function', () => {
     expect(flatten([[1, 2, [3]], 4])).to.eql([1, 2, 3, 4])
     expect(flatten([1, [[[[[[[[[[[[[[2]]]]]]]]]]]]]]])).to.eql([1, 2])
   })
+
+  it('input to flatten function must be an array', () => {
+    expect(() => {flatten([1])}).to.not.throw();
+    expect(() => {flatten('z')}).to.throw();
+  })
 })
