@@ -10,9 +10,4 @@ const flatten = (array) => {
   }, []);
 }
 
-
-// test
-// flatten([1, 2, [3], 4]) === [1, 2, 3, 4]
-
-
 module.exports = flatten
