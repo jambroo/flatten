@@ -6,6 +6,9 @@
 */
 const flatten = (array) => {
   return array.reduce((a, element)=> {
+    if (Array.isArray(element)) {
+      return a.concat(flatten(element));
+    }
     return a.concat(element);
   }, []);
 }

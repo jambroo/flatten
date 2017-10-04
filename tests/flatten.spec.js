@@ -14,11 +14,14 @@ describe('flatten function', () => {
   })
 
   it('given a single-dimensional array should result in the same array', () => {
+    expect(flatten([1])).to.eql([1])
     expect(flatten([1, 2, 3])).to.eql([1, 2, 3])
   })
 
   it('given a multi-dimensional array should result in the same array flattened', () => {
     expect(flatten([1, 2, [3]])).to.eql([1, 2, 3])
-    expect(flatten([[1,2,[3]],4])).to.eql([1, 2, 3, 4])
+    expect(flatten([1, 2, [3], 4])).to.eql([1, 2, 3, 4])
+    expect(flatten([[1, 2, [3]], 4])).to.eql([1, 2, 3, 4])
+    expect(flatten([1, [[[[[[[[[[[[[[2]]]]]]]]]]]]]]])).to.eql([1, 2])
   })
 })
